@@ -4,7 +4,6 @@
 
 if instance_exists(objPlayer) && !global.noDeath
 {
-<<<<<<< HEAD:YoYoYo Verve Prince Avoidance Edit.gmx/scripts/player_kill.gml
     if(global.ance){
         player_kill_ance();
         exit;
@@ -21,17 +20,16 @@ if instance_exists(objPlayer) && !global.noDeath
         exit;
     }
     
-    global.deathSound = audio_play_sound(sndDeath, 0, false);
-    
+    if objPlayer.deathSoundCooldown <= 0 
+    {
+        global.deathSound = audio_play_sound(sndDeath, 0, false);
+        audio_play_sound(sndDeath, 0, false);
+        audio_sound_gain(global.deathSound, 0.5, 0);
+        objPlayer.deathSoundCooldown = 25;
+    }
     if (!global.muteMusic)  //play death music
     {
         if (global.deathMusicMode == 1) //instantly pause the current music
-=======
-    if !global.debugNoDeath {
-        global.deathSound = audio_play_sound(sndDeath, 0, false);
-        
-        if (!global.muteMusic)  //play death music
->>>>>>> upstream/main:YoYoYo Engine Verve Edition.gmx/scripts/player_kill.gml
         {
             if (global.deathMusicMode == 1) //instantly pause the current music
             {
@@ -69,7 +67,7 @@ if instance_exists(objPlayer) && !global.noDeath
             //global.gameOverMusic = audio_play_sound(musOnDeath, 1, false);
         }
     }
-<<<<<<< HEAD:YoYoYo Verve Prince Avoidance Edit.gmx/scripts/player_kill.gml
+    
     
     with (objPlayer)
     {
@@ -84,11 +82,6 @@ if instance_exists(objPlayer) && !global.noDeath
     {
         savedata_set_persistent("death", savedata_get("death") + 1);
         savedata_save(false); //save death/time
-=======
-    else if objPlayer.deathSoundCooldown <= 0 {
-        var sound = audio_play_sound(sndDeath, 0, false);
-        audio_sound_gain(sound, 0.5, 0);
-        objPlayer.deathSoundCooldown = 25;
->>>>>>> upstream/main:YoYoYo Engine Verve Edition.gmx/scripts/player_kill.gml
+
     }
 }
