@@ -356,6 +356,7 @@
       <script>scripts\string_concat.gml</script>
       <script>scripts\rlerp.gml</script>
       <script>scripts\esign.gml</script>
+      <script>scripts\color_multiply.gml</script>
     </scripts>
     <scripts name="Avoidance Core">
       <script>scripts\avoidance_add_debug_key.gml</script>

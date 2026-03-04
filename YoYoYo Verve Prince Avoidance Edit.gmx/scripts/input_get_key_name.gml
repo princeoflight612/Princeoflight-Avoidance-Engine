@@ -1,10 +1,12 @@
 ///input_get_key_name(key)
-//gets a string saying what the current keybind is
+
+// Returns the string form of the provided key bind.
 
 var keyIn = argument0; //Input key
 
 switch(keyIn)
 {
+    case noone: return "Nothing";
     //special keys
     case vk_space: return "Space";
     case vk_shift: return "Shift";

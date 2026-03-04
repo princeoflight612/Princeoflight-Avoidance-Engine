@@ -1,4 +1,5 @@
 ///music_load(name)
+
 //Loads a song from Included Files/Music/<name>.ogg if it hasn't been loaded previously.
 //Returns the sound index you can then pass into audio_play_sound() and such as usual.
 
@@ -23,6 +24,7 @@ if (is_undefined(index))
     else
     {
         //.ogg file with requested name doesn't exist in the Music folder.
+        print("Failed to find ", filename);
         return -1;
     }
 }
